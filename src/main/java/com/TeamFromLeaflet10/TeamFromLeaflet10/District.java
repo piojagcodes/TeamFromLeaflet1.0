@@ -41,6 +41,16 @@ public class District {
         this.population = population;
     }
 
+    @Override
+    public String toString() {
+        return "District{" +
+                "Id=" + Id +
+                ", name='" + name + '\'' +
+                ", area=" + area +
+                ", population=" + population +
+                '}';
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO )
     private Long Id;
