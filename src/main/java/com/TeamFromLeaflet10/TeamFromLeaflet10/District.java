@@ -1,13 +1,11 @@
 package com.TeamFromLeaflet10.TeamFromLeaflet10;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-public class District {
+ public class District {
 
     public Long getId() {
         return Id;
@@ -57,6 +55,10 @@ public class District {
     private String name;
     private float area;
     private int population;
+
+    @OneToMany(mappedBy = "district")
+    private Set<Street> streets;
+
 
     private District() {
 
