@@ -38,6 +38,21 @@ public class Street {
                 '}';
     }
 
+    public Street(String name, String type, District district) {
+        this.name = name;
+        this.type = type;
+        this.district = district;
+    }
+
+    public District getDistrict() {
+
+        return district;
+    }
+
+    public void setDistrict(District district) {
+        this.district = district;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
@@ -47,8 +62,6 @@ public class Street {
     @ManyToOne
     @JoinColumn
     private District district;
-
-
 
 
     private Street() {
